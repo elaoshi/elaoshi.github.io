@@ -23,7 +23,7 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-	("Home", "/"),
+	("Projects", "/category/projects.html"),
 	# ('Pelican', 'http://getpelican.com/'),
 	)
 
@@ -39,3 +39,6 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+STATIC_PATHS = ['extra/robots.txt']
+EXTRA_PATH_METADATA = {'extra/robots.txt': {'path': 'robots.txt'},}

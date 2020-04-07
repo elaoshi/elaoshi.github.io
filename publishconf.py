@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = ''
+SITEURL = 'https://elaoshi.github.io'
 RELATIVE_URLS = False
 
 THEME = 'Flex'
@@ -29,3 +29,7 @@ GOOGLE_ANALYTICS = "UA-129016264-2"
 
 #DISQUS_SITENAME = ""
 #GOOGLE_ANALYTICS = ""
+
+
+STATIC_PATHS = ['extra/robots.txt']
+EXTRA_PATH_METADATA = {'extra/robots.txt': {'path': 'robots.txt'},}
