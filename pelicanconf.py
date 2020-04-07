@@ -27,6 +27,9 @@ LINKS = (
 	# ('Pelican', 'http://getpelican.com/'),
 	)
 
+
+MAIN_MENU = True
+
 # Social widget
 SOCIAL = (
 	#('You can add links in your config file', '#'),
