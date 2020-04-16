@@ -38,17 +38,26 @@
 </script>
 <!-- End Google Analytics -->
 
-    <meta name="author" content="ELaoshi" />
-    <meta name="description" content="Eric's Thoughts and Writings" />
-<meta property="og:site_name" content="ELaoshi Tech Projects"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="ELaoshi Tech Projects"/>
-<meta property="og:description" content="Eric's Thoughts and Writings"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.iamericliu.com"/>
+<meta name="author" content="ELaoshi" />
+<meta name="description" content="My blog already integrated with Cricle CI Good for me to testing both in Cirecle CI and Netlify. The structure is following : v1: v2: My circle config yml v1 is : version: 1 jobs: build: docker: - image: circleci/python:3.7 dependencies: pre: - pip install --upgrade pip steps: - checkout - run: command …" />
+<meta name="keywords" content="circle ci, pelican">
 
-  <title>ELaoshi Tech Projects &ndash;     Categories
-</title>
+
+<meta property="og:site_name" content="ELaoshi Tech Projects"/>
+<meta property="og:title" content="Integrated Pelican website blog with Circle CI"/>
+<meta property="og:description" content="My blog already integrated with Cricle CI Good for me to testing both in Cirecle CI and Netlify. The structure is following : v1: v2: My circle config yml v1 is : version: 1 jobs: build: docker: - image: circleci/python:3.7 dependencies: pre: - pip install --upgrade pip steps: - checkout - run: command …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.iamericliu.com/integrated-blog-with-circle-ci.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-04-09 15:12:00+10:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://www.iamericliu.com/author/elaoshi.html">
+<meta property="article:section" content="Tech"/>
+<meta property="article:tag" content="circle ci"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="og:image" content="">
+
+  <title>ELaoshi Tech Projects &ndash; Integrated Pelican website blog with Circle CI</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -184,16 +193,90 @@
     
 <article class="single">
   <header>
-    <h1 id="categories">    Categories
-</h1>
+      
+    <h1 id="integrated-blog-with-circle-ci">Integrated Pelican website blog with Circle CI</h1>
+    <p>
+          Posted on Thu 09 April 2020 in <a href="https://www.iamericliu.com/category/tech.html">Tech</a>
+
+
+    </p>
   </header>
+
+
   <div>
-    <ul class="list">
-      <li><a href="https://www.iamericliu.com/category/blogging.html">blogging</a> (2)</li>
-      <li><a href="https://www.iamericliu.com/category/daily.html">Daily</a> (1)</li>
-      <li><a href="https://www.iamericliu.com/category/tech.html">Tech</a> (15)</li>
-    </ul>
+    <p>My blog already integrated with Cricle CI</p>
+<p>Good for me to testing both in Cirecle CI and Netlify.</p>
+<p>The structure is following : </p>
+<p>v1:
+<img src="/images/website-structure.png" width="70%"></p>
+<p>v2:
+<img src="/images/website-sturcture-deploy-circleci-v2.png" alt="circle ci deploy website" width="70%"></p>
+<p><img src="/images/website-structure-circle.png" width="70%"></p>
+<p>My circle config yml v1 is : </p>
+<div class="highlight"><pre><span></span><span class="n">version</span><span class="o">:</span> <span class="mi">1</span>
+<span class="n">jobs</span><span class="o">:</span>
+  <span class="n">build</span><span class="o">:</span>
+    <span class="n">docker</span><span class="o">:</span>
+      <span class="o">-</span> <span class="n">image</span><span class="o">:</span> <span class="n">circleci</span><span class="o">/</span><span class="n">python</span><span class="o">:</span><span class="mf">3.7</span>
+    <span class="n">dependencies</span><span class="o">:</span>
+      <span class="n">pre</span><span class="o">:</span>
+        <span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+    <span class="n">steps</span><span class="o">:</span>
+        <span class="o">-</span> <span class="n">checkout</span>
+        <span class="o">-</span> <span class="n">run</span><span class="o">:</span>
+            <span class="n">command</span><span class="o">:</span> <span class="o">|</span>
+                <span class="n">ls</span> <span class="o">/</span>
+                <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
+                <span class="o">.</span> <span class="n">venv</span><span class="sr">/bin/</span><span class="n">activate</span>
+                <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="na">txt</span>
+        <span class="o">-</span> <span class="n">run</span><span class="o">:</span>
+                <span class="n">name</span><span class="o">:</span> <span class="n">Running</span> <span class="n">tests</span>
+                <span class="n">command</span><span class="o">:</span> <span class="o">|</span>
+                <span class="o">.</span> <span class="n">venv</span><span class="sr">/bin/</span><span class="n">activate</span>
+                <span class="n">pytest</span>
+        <span class="o">-</span> <span class="n">store_artifacts</span><span class="o">:</span>
+            <span class="n">path</span><span class="o">:</span> <span class="n">test</span><span class="o">-</span><span class="n">reports</span><span class="o">/</span>
+            <span class="n">destination</span><span class="o">:</span> <span class="n">python_app</span>
+</pre></div>
   </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://www.iamericliu.com/tag/circle-ci.html">circle ci</a>
+      <a href="https://www.iamericliu.com/tag/pelican.html">pelican</a>
+    </p>
+  </div>
+
+  <div class="buymecoffer">
+    <a href="https://www.buymeacoffee.com/l8QIhg0" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+  </div>
+
+  <div class="center social-share">
+    <p>    Like this article? Share it with your friends!
+</p>
+    <div class="addthis_native_toolbox"></div>
+    <div class="addthis_sharing_toolbox"></div>
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline"></div>
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'disqus_dJ4Rfz4xmF';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+<!-- End Disqus -->
 </article>
 
 

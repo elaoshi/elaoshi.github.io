@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ELaoshi Tech Projects - Daily</title><link href="https://www.iamericliu.com/" rel="alternate"></link><link href="https://www.iamericliu.com/feeds/daily.atom.xml" rel="self"></link><id>https://www.iamericliu.com/</id><updated>2020-04-08T08:00:00+10:00</updated><subtitle>Full Stack Developer</subtitle><entry><title>澳洲IINet使用过程中的小插曲</title><link href="https://www.iamericliu.com/daily-20200408.html" rel="alternate"></link><published>2020-04-08T08:00:00+10:00</published><updated>2020-04-08T08:00:00+10:00</updated><author><name>ELaoshi</name></author><id>tag:www.iamericliu.com,2020-04-08:/daily-20200408.html</id><content type="html">&lt;h1&gt;事儿多&lt;/h1&gt;
+&lt;p&gt;今天发现网络特别慢，不正常的慢。。自己找问题，发现也没有什么事儿， 网络一切正常。&lt;/p&gt;
+&lt;p&gt;后来一想，嘿，忘了付网络费用了， iinet的 网络还不错。流量大， 速度快，稳定。&lt;/p&gt;
+&lt;p&gt;后来一付完钱， 网络马上恢复正常速度了。&lt;/p&gt;
+&lt;p&gt;这样就懂了， 这当地一旦出现账号未付款， 就是会被限速了。&lt;/p&gt;
+&lt;p&gt;完。&lt;/p&gt;</content><category term="Daily"></category><category term="IINet"></category><category term="Payment"></category></entry></feed>
